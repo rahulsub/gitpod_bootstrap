@@ -12,3 +12,7 @@ nohup sudo tailscaled &> /tmp/nohup.out &
 if [ -n "$TAILSCALE_AUTHKEY" ]; then
   sudo tailscale up --authkey="$TAILSCALE_AUTHKEY"
 fi
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+./aws/install -i /usr/local/aws-cli -b /usr/local/bin
